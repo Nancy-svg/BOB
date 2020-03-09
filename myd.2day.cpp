@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <cmath>
 using namespace std;
  float q(float a) {
@@ -8,25 +8,20 @@ using namespace std;
 }
 int main()
 {
-	float a, b, fa, fb , k,k3;
-	int k1, k2;
-	fb = 0;
-	a = 3;
-	b = 4;
+	float a = 3, b = 4, fa, k,k1 ,i = 0;
 	k = q(a);
 	do 
 	{
-		k3 = a;
+		k1 = a;
 		a = (a + b) / 2;
-		fa = q(a);
-		if (k * fa < 0) {
-			b = k3;
+		if (k * q(a) < 0) {
+			b = k1;
 		}
-		k1 = q(a) * 100;
-		k2 = q(b) * 100;
-		k = fa;
-		cout << a << endl;
+		k = q(a);
+		i++;
 	} 
-	while (k1 != k2);
+	while (abs(b-a) > 0.0001);
+	cout << "Результат равен " << a << endl;
+	cout << "Количество итераций " << i;
 	return 0;
 }
