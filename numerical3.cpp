@@ -1,18 +1,22 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-double q(double x) {
-    return 2 * x - log10(x) - 7;
+ float q(float a) {
+	 float q;
+	 q = 2 * a - log10(a) - 7;
+	 return(q);
 }
-int main()
+int main() {
+	double fx = 3, fn = 4, k;
+int i = 0;
+do
 {
-    double xn = 3, x,b = 4,p = 0.0001;
-    int i = 0;
-    do {
-        x = xn;
-        xn = x - (b - x) / (q(b) - q(x)) * q(x);
-        i++;
-    } while (abs(q(xn) - q(x)) > p);
-    cout << "Результат равен " << xn << endl;
-	cout << "Количество итераций " << i;
+	fn = q(fx);
+	k = abs(fx - fn);
+	fx = fn;
+	i++;
+}
+while(k > 0.001);
+cout << "Результат равен " << fx << endl;
+cout << "Количество итераций " << i;
 }
