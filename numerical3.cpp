@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-double func(double x) {
+double q(double x) {
     return 2 * x - log10(x) - 7;
 }
 int main()
@@ -10,9 +10,9 @@ int main()
     int i = 0;
     do {
         x = xn;
-        xn = x - (b - x) / (func(b) - func(x)) * func(x);
+        xn = x - (b - x) / (q(b) - q(x)) * q(x);
         i++;
-    } while (abs(func(xn) - func(x)) > p);
+    } while (abs(q(xn) - q(x)) > p);
     cout << "Результат равен " << xn << endl;
 	cout << "Количество итераций " << i;
 }
