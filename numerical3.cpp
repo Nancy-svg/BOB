@@ -3,7 +3,7 @@
 using namespace std;
  float q(float a) {
 	 float q;
-	 q = 2 * a - log10(a) - 7;
+	 q =(log10(a) + 7)/2;
 	 return(q);
 }
 int main() {
